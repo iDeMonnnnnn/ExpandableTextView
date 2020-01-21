@@ -5,15 +5,13 @@
 
 [文档](https://demon.blog.csdn.net/article/details/104060142)
 
-
 ### 效果
-<img src="https://raw.githubusercontent.com/DeMonLiu623/ExpandableTextView/master/img/device-2020-01-21-105005.png" alt="xxx" height="500" width="300">
-<img src="https://raw.githubusercontent.com/DeMonLiu623/ExpandableTextView/master/img/device-2020-01-21-101650.png" alt="xxx" height="500" width="300">
+<img src="https://raw.githubusercontent.com/DeMonLiu623/ExpandableTextView/master/img/device-2020-01-21-105005.png" alt="xxx" height="500" width="300"><img src="https://raw.githubusercontent.com/DeMonLiu623/ExpandableTextView/master/img/device-2020-01-21-101650.png" alt="xxx" height="500" width="300">
 
 ### 使用
 
 #### 添加依赖
-```
+```java
 	allprojects {
 		repositories {
 			...
@@ -24,7 +22,7 @@
 
 ```
 
-```
+```java
 	dependencies {
 	        implementation 'com.github.DeMonLiu623:ExpandableTextView:1.0'
 	}
@@ -59,6 +57,13 @@
 |collapseDrawable|向上折叠时的图标|
 |showLines|折叠时显示的文本行数，默认3|
 |isExpand|初始是否展开，默认false|
+
+
+### 已知缺陷
+
+>最后一行的内容刚好完全填满，而tvSecond由于右边drawableRight和drawablePadding的存在所以可能显示不全，只能加多一行显示。
+>这时视觉上折叠按钮在最后两行的中间，而不是在最后一行。
+
 
 ### Bugs or Questions
 
