@@ -7,11 +7,58 @@
 
 
 ### 效果
-
-
+<img src="https://raw.githubusercontent.com/DeMonLiu623/ExpandableTextView/master/img/device-2020-01-21-105005.png" alt="xxx" height="500" width="300">
+<img src="https://raw.githubusercontent.com/DeMonLiu623/ExpandableTextView/master/img/device-2020-01-21-101650.png" alt="xxx" height="500" width="300">
 
 ### 使用
 
+#### 添加依赖
+```
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+
+
+```
+
+```
+	dependencies {
+	        implementation 'com.github.DeMonLiu623:ExpandableTextView:1.0'
+	}
+```
+
+#### xml使用
+
+```xml
+<com.demon.expandablelibrary.ExpandableTextView
+        android:id="@+id/expandTextView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="30dp"
+        app:isExpand="true"
+        app:showLines="4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expandTextView1"
+        app:textColor="@color/colorPrimary"
+        app:textSize="15sp" />
+```
+
+
+#### 属性说明
+
+|属性|说明|
+|--|--|
+|text|文本内容|
+|textColor|字体颜色|
+|textSize|字体大小|
+|expandDrawable|向下展开时的图标|
+|collapseDrawable|向上折叠时的图标|
+|showLines|折叠时显示的文本行数，默认3|
+|isExpand|初始是否展开，默认false|
 
 ### Bugs or Questions
 
