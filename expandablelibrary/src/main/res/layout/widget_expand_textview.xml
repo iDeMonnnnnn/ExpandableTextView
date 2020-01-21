@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvFirst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="3" />
+
+    <com.demon.expandablelibrary.ClickRightTextView
+        android:id="@+id/tvSecond"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:drawableRight="@mipmap/icon_expand"
+        android:drawablePadding="15dp"
+        android:ellipsize="end"
+        android:focusable="true"
+        android:maxLines="1" />
+</LinearLayout>
