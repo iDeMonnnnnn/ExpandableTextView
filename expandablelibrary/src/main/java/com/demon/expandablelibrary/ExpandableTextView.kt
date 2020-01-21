@@ -92,27 +92,37 @@ class ExpandableTextView : ConstraintLayout {
      * 计算行数
      */
     private fun initLines() {
+        //将文本内容全部给tvFirst，方便后面计算行数，获取每行的文本内容
         tvFirst.text = text
+        //tvFirst绘制时监听
         tvFirst.viewTreeObserver.addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
             override fun onPreDraw(): Boolean {
                 tvFirst.viewTreeObserver.removeOnPreDrawListener(this)
+                //绘制时获取tvFirst实际总行数，直接获取返回的是0
                 textLines = tvFirst.lineCount
                 if (textLines <= showLines) {
                     //tvSecond隐藏，只显示tvFirst
                     tvSecond.visibility = View.GONE
                     tvFirst.setLines(tvFirst.lineCount)
                 } else {
+                    //获取tvFirst显示布局，可根据改布局获取文本中每行的开始位置和结束位置
                     val layout = tvFirst.layout
                     if (isExpand) {
+                        //获取展开最后一行的内容，展开时给tvSecond显示
                         lastLineStr = text.substring(layout.getLineStart(textLines - 1), layout.getLineEnd(textLines - 1))
+                        //设置tvFirst的行数=最大行数-1
                         tvFirst.setLines(textLines - 1)
+                        //设置tvSecond的行数控制其显示内容，此处设置为maxLines=2是因为可能存在：
+                        //最后一行的内容刚好完全填满，而tvSecond由于右边drawableRight和drawablePadding的存在所以可能显示不全，只能加多一行显示。
                         tvSecond.maxLines = 2
                         tvSecond.text = lastLineStr
                     } else {
+                        //设置tvFirst的行数=折叠时显示的行数-1
                         tvFirst.setLines(showLines - 1)
                         val start = layout.getLineStart(showLines - 1)
                         val end = layout.getLineEnd(showLines - 1)
                         secondTextLineStr = text.substring(start, end)
+                        //获取折叠时最后一行的内容，给tvSecond显示
                         tvSecond.maxLines = 1
                         tvSecond.text = secondTextLineStr
                     }
@@ -151,12 +161,12 @@ class ExpandableTextView : ConstraintLayout {
 
 
     fun setExpand(isExpand: Boolean) {
-        if (this.isExpand == isExpand || textLines <= showLines) return
         if (isExpand) {
             tvSecond.setCompoundDrawables(null, null, collapseDrawable, null)
         } else {
             tvSecond.setCompoundDrawables(null, null, expandDrawable, null)
         }
+        if (this.isExpand == isExpand || textLines <= showLines) return
         listener?.onExpandChange(isExpand)
         this.isExpand = isExpand
         initLines()

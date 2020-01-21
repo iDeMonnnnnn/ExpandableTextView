@@ -14,7 +14,8 @@
         android:padding="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:textColor="@color/colorPrimary"
+        app:showLines="4"
+        app:textColor="@color/colorAccent"
         app:textSize="14sp" />
 
     <com.demon.expandablelibrary.ExpandableTextView
@@ -23,9 +24,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:padding="30dp"
+        app:isExpand="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/expandTextView1"
+        app:showLines="4"
         app:textColor="@color/colorPrimary"
-        app:textSize="14sp" />
+        app:textSize="15sp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
