@@ -24,7 +24,7 @@
 
 ```
 	dependencies {
-	        implementation 'com.github.DeMonLiu623:ExpandableTextView:1.1'
+	        implementation 'com.github.DeMonLiu623:ExpandableTextView:1.2'
 	}
 ```
 #### xml布局

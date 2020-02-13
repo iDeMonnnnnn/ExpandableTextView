@@ -79,7 +79,6 @@ class ExpandableTextView : ConstraintLayout {
         }
 
         setText(text)
-        initLines()
 
         tvSecond.setOnClickRightListener(object : ClickRightTextView.OnClickRightClickListener {
             override fun onClickRightClick() {
@@ -188,9 +187,11 @@ class ExpandableTextView : ConstraintLayout {
             tvSecond.setCompoundDrawables(null, null, expandDrawable, null)
         }
 
-        //if (this.isExpand == isExpand) return
-        listener?.onExpandChange(isExpand)
-        this.isExpand = isExpand
+        if (this.isExpand != isExpand){
+            listener?.onExpandChange(isExpand)
+            this.isExpand = isExpand
+        }
+
         initLines()
     }
 
