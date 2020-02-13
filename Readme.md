@@ -13,18 +13,16 @@
 ### 使用
 
 #### 添加依赖
-```java
+```
 	allprojects {
 		repositories {
 			...
 			maven { url 'https://jitpack.io' }
 		}
 	}
-
-
 ```
 
-```java
+```
 	dependencies {
 	        implementation 'com.github.DeMonLiu623:ExpandableTextView:1.1'
 	}
