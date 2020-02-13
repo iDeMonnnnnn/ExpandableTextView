@@ -76,7 +76,6 @@ class Adapter(val context: Context) : RecyclerView.Adapter<Adapter.Holder>() {
         override fun getItemCount(): Int = 20
     }
 ```
-
 #### 属性说明
 
 |属性|说明|
@@ -89,6 +88,8 @@ class Adapter(val context: Context) : RecyclerView.Adapter<Adapter.Holder>() {
 |showLines|折叠时显示的文本行数，默认3|
 |isExpand|初始是否展开，默认false|
 
+#### 更多使用详情
+请参照demo app的代码。
 
 ### 已知缺陷
 

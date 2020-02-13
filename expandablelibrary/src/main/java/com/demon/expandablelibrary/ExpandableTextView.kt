@@ -149,7 +149,9 @@ class ExpandableTextView : ConstraintLayout {
         tvSecond.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize)
     }
 
-
+    /**
+     * 普通使用赋值文本内容
+     */
     fun setText(string: String) {
         this.setText(string, isExpand)
     }
@@ -159,6 +161,10 @@ class ExpandableTextView : ConstraintLayout {
         setExpand(isExpand)
     }
 
+    /**
+     * 在列表中使用赋值文本内容请使用此方法
+     * 用SparseBooleanArray记录列表中展开的位置，防止错乱
+     */
     fun setText(string: String, collapsedStatus: SparseBooleanArray, position: Int) {
         mCollapsedStatus = collapsedStatus
         mPosition = position
