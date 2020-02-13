@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <declare-styleable name="ExpandableTextView">
+        <attr name="text" format="string" />
+        <attr name="textColor" format="color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="expandDrawable" format="reference" />
+        <attr name="collapseDrawable" format="reference" />
+        <attr name="showLines" format="integer" />
+        <attr name="isExpand" format="boolean" />
+    </declare-styleable>
+
+
+    <color name="color666666">#666666</color>
+</resources>
