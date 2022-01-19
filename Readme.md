@@ -102,8 +102,8 @@ class Adapter(val context: Context) : RecyclerView.Adapter<Adapter.Holder>() {
 
 ### Bugs or Questions
 
-1. issues
-2. email:757454343@qq.com
+请在issues留言，定期回复。
+
 
 ### MIT License
 
